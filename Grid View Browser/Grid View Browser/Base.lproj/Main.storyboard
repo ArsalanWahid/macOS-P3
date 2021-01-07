@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,37 +674,149 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Grid_View_Browser" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="89" y="-28"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="windowController" customModule="Grid_View_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="800" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="800" height="270"/>
+                        <toolbar key="toolbar" implicitIdentifier="D815C668-1149-435D-9CB2-707A7420BE53" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="X3Z-Yu-3fo">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="mpZ-dV-1jF"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="mwI-P9-peB"/>
+                                <toolbarItem implicitItemIdentifier="EEDBDF4F-807D-4317-A0BD-A377805CEC90" label="" paletteLabel="" sizingBehavior="auto" id="deK-V7-eyY" userLabel="Left/Right">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="UX2-LY-gpK">
+                                        <rect key="frame" x="0.0" y="14" width="75" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="FJA-95-Pwx">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSGoLeftTemplate" width="32"/>
+                                                <segment image="NSGoRightTemplate" width="32" tag="1"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="navigationClicked:" target="Oky-zY-oP4" id="FQH-IW-5Uh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="EC8BFB78-40A0-4B45-9754-A7FA61875A7D" label="" paletteLabel="" sizingBehavior="auto" id="LaG-Tb-Nrc" userLabel="Add/RemoveRows">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="CB2-EO-wSO">
+                                        <rect key="frame" x="0.0" y="14" width="75" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="0m0-RR-4md">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSAddTemplate" width="32"/>
+                                                <segment image="NSRemoveTemplate" width="32" tag="1"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="adjustRows:" target="Oky-zY-oP4" id="4mf-gz-WWe"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="617B420F-6D64-4639-A7FC-0762A6D2AF0F" label="" paletteLabel="" sizingBehavior="auto" id="ScY-1l-bKc" userLabel="Add/RemoveCols">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="gVr-Fo-m7z">
+                                        <rect key="frame" x="0.0" y="14" width="75" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="Sbn-W2-Hg0">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSAddTemplate" width="32"/>
+                                                <segment image="NSRemoveTemplate" width="32" tag="1"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="adjustColumns:" target="Oky-zY-oP4" id="4TT-Td-3wM"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="17B48446-D767-44FB-9A82-60DD5666105E" label="" paletteLabel="" id="JY4-BY-QWS" userLabel="URL">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="100" height="21"/>
+                                    <size key="maxSize" width="4000" height="21"/>
+                                    <textField key="view" verticalHuggingPriority="750" id="ZmF-Rj-yl5">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Enter URL ..." drawsBackground="YES" id="qpA-ea-fAs">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <action selector="urlEntered:" target="Oky-zY-oP4" id="r0A-vQ-JFN"/>
+                                        </connections>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="2A96CC37-46D7-4486-B521-BBA0EDA3E531" label="" paletteLabel="" sizingBehavior="auto" id="zkQ-ZQ-ztQ" userLabel="Rows">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Z8r-Q1-c8C">
+                                        <rect key="frame" x="0.0" y="14" width="37" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Rows" id="PoB-3D-4zR">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="D3B20A3E-8B98-4FE7-B766-05C3AF9C6DE6" label="" paletteLabel="" sizingBehavior="auto" id="z8n-og-Qxc" userLabel="Cols">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="bsw-ZZ-zEA">
+                                        <rect key="frame" x="0.0" y="14" width="31" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Cols" id="Zk5-1g-aSd">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="deK-V7-eyY"/>
+                                <toolbarItem reference="mpZ-dV-1jF"/>
+                                <toolbarItem reference="JY4-BY-QWS"/>
+                                <toolbarItem reference="mpZ-dV-1jF"/>
+                                <toolbarItem reference="zkQ-ZQ-ztQ"/>
+                                <toolbarItem reference="LaG-Tb-Nrc"/>
+                                <toolbarItem reference="mpZ-dV-1jF"/>
+                                <toolbarItem reference="z8n-og-Qxc"/>
+                                <toolbarItem reference="mpZ-dV-1jF"/>
+                                <toolbarItem reference="ScY-1l-bKc"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="addressEntry" destination="ZmF-Rj-yl5" id="EpI-J8-p1v"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="179" y="250"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Grid_View_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -711,7 +824,13 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="179" y="716"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSGoLeftTemplate" width="10" height="14"/>
+        <image name="NSGoRightTemplate" width="10" height="14"/>
+        <image name="NSRemoveTemplate" width="14" height="4"/>
+    </resources>
 </document>

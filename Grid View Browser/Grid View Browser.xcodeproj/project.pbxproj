@@ -11,6 +11,7 @@
 		162DE40D25A78A300003308F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162DE40C25A78A300003308F /* ViewController.swift */; };
 		162DE40F25A78A330003308F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162DE40E25A78A330003308F /* Assets.xcassets */; };
 		162DE41225A78A330003308F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162DE41025A78A330003308F /* Main.storyboard */; };
+		162DE41C25A791DA0003308F /* windowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162DE41B25A791DA0003308F /* windowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		162DE41125A78A330003308F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		162DE41325A78A330003308F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162DE41425A78A330003308F /* Grid_View_Browser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grid_View_Browser.entitlements; sourceTree = "<group>"; };
+		162DE41B25A791DA0003308F /* windowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = windowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				162DE40A25A78A300003308F /* AppDelegate.swift */,
 				162DE40C25A78A300003308F /* ViewController.swift */,
+				162DE41B25A791DA0003308F /* windowController.swift */,
 				162DE40E25A78A330003308F /* Assets.xcassets */,
 				162DE41025A78A330003308F /* Main.storyboard */,
 				162DE41325A78A330003308F /* Info.plist */,
@@ -134,6 +137,7 @@
 			files = (
 				162DE40D25A78A300003308F /* ViewController.swift in Sources */,
 				162DE40B25A78A300003308F /* AppDelegate.swift in Sources */,
+				162DE41C25A791DA0003308F /* windowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
