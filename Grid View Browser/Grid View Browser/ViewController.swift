@@ -8,9 +8,11 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController,WKNavigationDelegate {
+class ViewController: NSViewController,WKNavigationDelegate, NSGestureRecognizerDelegate {
     
     var rows:NSStackView!
+    var selectedWebView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //      Make a vertical stack view and add it to view
@@ -114,7 +116,43 @@ class ViewController: NSViewController,WKNavigationDelegate {
         webView.navigationDelegate = self
         webView.wantsLayer = true
         webView.load(URLRequest(url: URL(string: "https://www.apple.com")!))
+        let recognizer = NSClickGestureRecognizer(target: self, action: #selector(webViewClicked))
+//        recognizer.numberOfClicksRequired = 2 causes single double click delay
+        recognizer.delegate = self
+        webView.addGestureRecognizer(recognizer)
+        
+        if selectedWebView == nil {
+            select(webView: webView)
+        }
+        
         return webView
+    }
+    
+    func select(webView: WKWebView) {
+        selectedWebView = webView
+        selectedWebView.layer?.borderWidth = 4
+        selectedWebView.layer?.borderColor = NSColor.blue.cgColor
+    }
+    
+    @objc func webViewClicked(recognizer: NSClickGestureRecognizer) {
+        // pick the new webview selected
+        guard let newSelectedWebView = recognizer.view as? WKWebView else { return }
+        
+        // set the border width of the old web view to 0
+        if let selected = selectedWebView {
+            selected.layer?.borderWidth = 0
+        }
+        
+        // Set the border of the new select web view
+        select(webView: newSelectedWebView)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: NSGestureRecognizer, shouldAttemptToRecognizeWith event: NSEvent) -> Bool {
+        if gestureRecognizer.view == selectedWebView {
+            return false
+        }else {
+            return true
+        }
     }
 }
 
