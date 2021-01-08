@@ -123,7 +123,7 @@ class ViewController: NSViewController,WKNavigationDelegate, NSGestureRecognizer
         let webView = WKWebView()
         webView.navigationDelegate = self
         webView.wantsLayer = true
-        webView.load(URLRequest(url: URL(string: "https://www.apple.com")!))
+        webView.load(URLRequest(url: URL(string: "https://www.itretina.com")!))
         let recognizer = NSClickGestureRecognizer(target: self, action: #selector(webViewClicked))
 //        recognizer.numberOfClicksRequired = 2 causes single double click delay
         recognizer.delegate = self
@@ -140,6 +140,10 @@ class ViewController: NSViewController,WKNavigationDelegate, NSGestureRecognizer
         selectedWebView = webView
         selectedWebView.layer?.borderWidth = 4
         selectedWebView.layer?.borderColor = NSColor.blue.cgColor
+        
+        if let windowController = view.window?.windowController as? windowController {
+            windowController.addressEntry.stringValue = selectedWebView.url?.absoluteString ?? ""
+        }
     }
     
     @objc func webViewClicked(recognizer: NSClickGestureRecognizer) {
@@ -161,6 +165,14 @@ class ViewController: NSViewController,WKNavigationDelegate, NSGestureRecognizer
         }else {
             return true
         }
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        guard webView == selectedWebView else { return }
+        if let windowController = view.window?.windowController as? windowController {
+            windowController.addressEntry.stringValue = selectedWebView.url?.absoluteString ?? ""
+        }
+        
     }
 }
 
