@@ -118,6 +118,10 @@ class ViewController: NSViewController,WKNavigationDelegate, NSGestureRecognizer
         }
     }
     
+    @IBAction func refeshPage(_ sender: NSButton) {
+        selectedWebView.reload()
+    }
+    
     //MARK:- Methods
     func makeWebView() -> NSView {
         let webView = WKWebView()

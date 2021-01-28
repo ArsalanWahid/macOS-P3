@@ -687,8 +687,8 @@
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="800" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="contentRect" x="196" y="240" width="881" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
                         <value key="minSize" type="size" width="800" height="270"/>
                         <toolbar key="toolbar" implicitIdentifier="D815C668-1149-435D-9CB2-707A7420BE53" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="X3Z-Yu-3fo">
                             <allowedToolbarItems>
@@ -786,6 +786,20 @@
                                         </textFieldCell>
                                     </textField>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="581ACC15-081C-41DE-AF8A-0B85606645C6" label="" paletteLabel="" image="arrow.clockwise" catalog="system" sizingBehavior="auto" id="ajP-Ed-8kb">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="FuZ-GM-dB7">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="arrow.clockwise" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UW1-7c-CJv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="refeshPage:" target="Oky-zY-oP4" id="AGU-lG-Ojf"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="deK-V7-eyY"/>
@@ -798,6 +812,7 @@
                                 <toolbarItem reference="z8n-og-Qxc"/>
                                 <toolbarItem reference="mpZ-dV-1jF"/>
                                 <toolbarItem reference="ScY-1l-bKc"/>
+                                <toolbarItem reference="ajP-Ed-8kb"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -811,7 +826,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="250"/>
+            <point key="canvasLocation" x="219.5" y="250"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -824,7 +839,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="716"/>
+            <point key="canvasLocation" x="219" y="704"/>
         </scene>
     </scenes>
     <resources>
@@ -832,5 +847,6 @@
         <image name="NSGoLeftTemplate" width="10" height="14"/>
         <image name="NSGoRightTemplate" width="10" height="14"/>
         <image name="NSRemoveTemplate" width="14" height="4"/>
+        <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
     </resources>
 </document>
